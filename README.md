@@ -17,6 +17,8 @@ Public methods:
 
 `refresh`: Uses the current `datetime` and `format` attributes to update the displayed timestamp.
 
+`setMask(mask, format)`: Use this to define your own, custom masks to be used in the `format` attribute. e.g. `setMask('hammerTime', 'HH:MM! "Can\'t touch this!"')`
+
 Special characters that are supported:
 
 | Mask | Description |
