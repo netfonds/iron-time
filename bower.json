@@ -1,6 +1,6 @@
 {
   "name": "iron-time",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "license": "https://raw.githubusercontent.com/cloudily/iron-time/master/LICENSE",
   "description": "Polymer element for date and time formatting",
   "main": [
@@ -21,12 +21,10 @@
     "url": "git://github.com/cloudily/iron-time.git"
   },
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.1.0"
+    "polymer": "Polymer/polymer#^2.0.0"
   },
   "devDependencies": {
-    "test-fixture": "PolymerElements/test-fixture#^1.0.0",
-    "web-component-tester": "^4.0.0",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+    "web-component-tester": "^6.0.0"
   },
   "ignore": []
 }

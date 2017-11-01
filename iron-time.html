@@ -2,12 +2,13 @@
 
 <dom-module id="iron-time">
   <template>
-    <style>
-      :host {
-        @apply(--iron-time-styles);
-      }
-    </style>
-
+    <custom-style>
+      <style>
+        :host {
+          @apply(--iron-time-styles);
+        }
+      </style>
+    </custom-style>
     <time id="time" datetime="{{datetime}}" format="{{format}}">{{output}}</time>
   </template>
 
@@ -134,31 +135,42 @@
       ]
     };
 
-    Polymer({
-      is: 'iron-time',
+})();
 
-      properties: {
-        target: {
-          type: Object,
-          value: function() {
-            return this.$.time;
-          }
-        },
-        output: {
-          type: String,
-          computed: 'refresh(datetime, format)'
-        }
-      },
+  class IronTime extends Polymer.Element {
 
-      refresh: function() {
-        return dateFormat(this.datetime, this.format);
-      },
+		static get is() { return 'iron-time'; }
+		static get properties(){
+			target: {
+		    type: Object,
+		    value: function() {
+		      return this.$.time;
+		    }
+		  },
+		  output: {
+		    type: String,
+		    computed: 'refresh(datetime, format)'
+		  }
+		}
 
-      setMask: function(name, format) {
-        dateFormat.masks[name] = format;
-        return this;
-      }
-    });
-  })();
+		constructor(){
+			super();
+		}
+
+		connectedCallback() {
+		  super.connectedCallback();
+		}
+
+		refresh() {
+			return dateFormat(this.datetime, this.format);
+		}
+
+		setMask(name, format){
+			dateFormat.masks[name] = format;
+			return this;
+		}
+
+	}
+
   </script>
 </dom-module>
