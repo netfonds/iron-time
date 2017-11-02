@@ -1,0 +1,24 @@
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../iron-time.html">
+
+<dom-module id="iron-time-demo">
+  <template>
+    <iron-time date-time="[[actualDate]]"></iron-time>
+  </template>
+  <script>
+  class IronTimeDemo extends Polymer.Element {
+
+		static get is() { return 'iron-time-demo'; }
+		static get properties(){
+      return {
+        actualDate: {
+            type: Object,
+            value: new Date()
+        }
+      }
+    }
+  }
+
+  customElements.define(IronTimeDemo.is, IronTimeDemo);
+  </script>
+</dom-module>
